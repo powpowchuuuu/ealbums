@@ -12,6 +12,12 @@ Screen.
 
 SwiftUI, iOS 26, Swift 6, MusicKit, WidgetKit. Covers only, in SF Pro Rounded.
 
+<p align="center">
+  <img src="docs/screenshots/albums.png" width="260" alt="The Albums screen: three kept releases in two columns">
+  <img src="docs/screenshots/search.png" width="260" alt="Searching Apple Music for JENNIE">
+  <img src="docs/screenshots/albums-dark.png" width="260" alt="The Albums screen in dark mode">
+</p>
+
 ## Build it
 
 1. Copy the signing settings and fill in your team and a bundle id prefix you own:
@@ -27,7 +33,8 @@ SwiftUI, iOS 26, Swift 6, MusicKit, WidgetKit. Covers only, in SF Pro Rounded.
    `group.<prefix>.EAlbums` that the app and its widgets share.
 4. Build and run the `EAlbums` scheme.
 
-In Debug, launching with `-preview-catalog` shows made-up search results instead of Apple Music.
+In Debug, launching with `-preview-catalog` shows made-up search results instead of Apple Music, and
+`-screenshotSearch <words>` opens the add sheet already searching (how the screenshots above were taken).
 
 ## How it is put together
 
