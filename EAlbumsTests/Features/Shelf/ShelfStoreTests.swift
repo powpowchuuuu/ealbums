@@ -57,6 +57,18 @@ struct ShelfStoreTests {
         #expect(store.saveFailed)
     }
 
+    @Test("tells after each successful save, not after a failed one")
+    func didSave() {
+        let storage = FakeShelfStorage()
+        var saves = 0
+        let store = ShelfStore(storage: storage) { Date() } didSave: { saves += 1 }
+        store.toggle(.sample())
+        store.toggle(.sample())
+        storage.fails = true
+        store.toggle(.sample())
+        #expect(saves == 2)
+    }
+
     @Test("visible applies the query")
     func visible() {
         let store = ShelfStore(storage: FakeShelfStorage([

@@ -11,10 +11,13 @@ final class ShelfStore {
 
     private let storage: any ShelfStorage
     private let now: () -> Date
+    private let didSave: () -> Void
 
-    init(storage: any ShelfStorage, now: @escaping () -> Date = Date.init) {
+    /// `didSave` runs after every successful save, to refresh the widgets.
+    init(storage: any ShelfStorage, now: @escaping () -> Date = Date.init, didSave: @escaping () -> Void = {}) {
         self.storage = storage
         self.now = now
+        self.didSave = didSave
     }
 
     /// The entries the query keeps, in its order.
@@ -47,6 +50,7 @@ final class ShelfStore {
         do {
             try storage.save(entries)
             saveFailed = false
+            didSave()
         } catch {
             saveFailed = true
         }

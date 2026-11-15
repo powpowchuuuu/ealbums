@@ -10,7 +10,8 @@ nonisolated protocol ShelfStorage: Sendable {
 nonisolated struct FileShelfStorage: ShelfStorage {
     let fileURL: URL
 
-    static let app = Self(fileURL: URL.applicationSupportDirectory.appending(path: "shelf.json"))
+    /// Where the app kept the shelf before the widgets shared it.
+    static let appOnly = Self(fileURL: URL.applicationSupportDirectory.appending(path: "shelf.json"))
 
     func load() throws -> [ShelfEntry] {
         guard FileManager.default.fileExists(atPath: fileURL.path(percentEncoded: false)) else { return [] }
