@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		7B8F00000000003E0000AAAA /* EAlbumsWidgets.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 7B8F0000000000320000AAAA /* EAlbumsWidgets.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		7B8F0000000000010000AAAA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -14,13 +18,39 @@
 			remoteGlobalIDString = 7B8F0000000000030000AAAA;
 			remoteInfo = EAlbums;
 		};
+		7B8F0000000000400000AAAA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7B8F0000000000020000AAAA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7B8F0000000000360000AAAA;
+			remoteInfo = EAlbumsWidgets;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7B8F00000000003D0000AAAA /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				7B8F00000000003E0000AAAA /* EAlbumsWidgets.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		7B8F0000000000040000AAAA /* EAlbums.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EAlbums.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B8F0000000000050000AAAA /* EAlbumsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EAlbumsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B8F0000000000060000AAAA /* Shared.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Shared.xcconfig; sourceTree = "<group>"; };
 		7B8F0000000000070000AAAA /* Secrets.example.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.example.xcconfig; sourceTree = "<group>"; };
+		7B8F0000000000320000AAAA /* EAlbumsWidgets.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = EAlbumsWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B8F0000000000430000AAAA /* App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "App-Info.plist"; sourceTree = "<group>"; };
+		7B8F0000000000330000AAAA /* Widgets-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Widgets-Info.plist"; sourceTree = "<group>"; };
+		7B8F0000000000340000AAAA /* EAlbums.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EAlbums.entitlements; sourceTree = "<group>"; };
+		7B8F0000000000350000AAAA /* EAlbumsWidgets.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EAlbumsWidgets.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -32,6 +62,16 @@
 		7B8F00000000000A0000AAAA /* EAlbumsTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = EAlbumsTests;
+			sourceTree = "<group>";
+		};
+		7B8F0000000000300000AAAA /* Shared */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		7B8F0000000000310000AAAA /* EAlbumsWidgets */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = EAlbumsWidgets;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -51,6 +91,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7B8F00000000003B0000AAAA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -59,6 +106,8 @@
 			children = (
 				7B8F00000000000E0000AAAA /* Config */,
 				7B8F0000000000090000AAAA /* EAlbums */,
+				7B8F0000000000300000AAAA /* Shared */,
+				7B8F0000000000310000AAAA /* EAlbumsWidgets */,
 				7B8F00000000000A0000AAAA /* EAlbumsTests */,
 				7B8F00000000000F0000AAAA /* Products */,
 			);
@@ -69,6 +118,10 @@
 			children = (
 				7B8F0000000000060000AAAA /* Shared.xcconfig */,
 				7B8F0000000000070000AAAA /* Secrets.example.xcconfig */,
+				7B8F0000000000430000AAAA /* App-Info.plist */,
+				7B8F0000000000330000AAAA /* Widgets-Info.plist */,
+				7B8F0000000000340000AAAA /* EAlbums.entitlements */,
+				7B8F0000000000350000AAAA /* EAlbumsWidgets.entitlements */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -78,6 +131,7 @@
 			children = (
 				7B8F0000000000040000AAAA /* EAlbums.app */,
 				7B8F0000000000050000AAAA /* EAlbumsTests.xctest */,
+				7B8F0000000000320000AAAA /* EAlbumsWidgets.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -92,14 +146,17 @@
 				7B8F0000000000110000AAAA /* Sources */,
 				7B8F00000000000B0000AAAA /* Frameworks */,
 				7B8F0000000000120000AAAA /* Resources */,
+				7B8F00000000003D0000AAAA /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				7B8F0000000000130000AAAA /* PBXTargetDependency */,
+				7B8F00000000003F0000AAAA /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				7B8F0000000000090000AAAA /* EAlbums */,
+				7B8F0000000000300000AAAA /* Shared */,
 			);
 			name = EAlbums;
 			packageProductDependencies = (
@@ -132,6 +189,30 @@
 			productReference = 7B8F0000000000050000AAAA /* EAlbumsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		7B8F0000000000360000AAAA /* EAlbumsWidgets */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7B8F0000000000370000AAAA /* Build configuration list for PBXNativeTarget "EAlbumsWidgets" */;
+			buildPhases = (
+				7B8F00000000003A0000AAAA /* Sources */,
+				7B8F00000000003B0000AAAA /* Frameworks */,
+				7B8F00000000003C0000AAAA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7B8F0000000000420000AAAA /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				7B8F0000000000310000AAAA /* EAlbumsWidgets */,
+				7B8F0000000000300000AAAA /* Shared */,
+			);
+			name = EAlbumsWidgets;
+			packageProductDependencies = (
+			);
+			productName = EAlbumsWidgets;
+			productReference = 7B8F0000000000320000AAAA /* EAlbumsWidgets.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -148,6 +229,9 @@
 					7B8F0000000000140000AAAA = {
 						CreatedOnToolsVersion = 27.2;
 						TestTargetID = 7B8F0000000000030000AAAA;
+					};
+					7B8F0000000000360000AAAA = {
+						CreatedOnToolsVersion = 27.2;
 					};
 				};
 			};
@@ -170,6 +254,7 @@
 			targets = (
 				7B8F0000000000030000AAAA /* EAlbums */,
 				7B8F0000000000140000AAAA /* EAlbumsTests */,
+				7B8F0000000000360000AAAA /* EAlbumsWidgets */,
 			);
 		};
 /* End PBXProject section */
@@ -183,6 +268,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		7B8F0000000000170000AAAA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B8F00000000003C0000AAAA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -206,6 +298,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7B8F00000000003A0000AAAA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -221,6 +320,15 @@
 			isa = PBXTargetDependency;
 			target = 7B8F0000000000030000AAAA /* EAlbums */;
 			targetProxy = 7B8F0000000000010000AAAA /* PBXContainerItemProxy */;
+		};
+		7B8F00000000003F0000AAAA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7B8F0000000000360000AAAA /* EAlbumsWidgets */;
+			targetProxy = 7B8F0000000000400000AAAA /* PBXContainerItemProxy */;
+		};
+		7B8F0000000000420000AAAA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 7B8F0000000000410000AAAA /* SwiftLintBuildToolPlugin */;
 		};
 /* End PBXTargetDependency section */
 
@@ -285,6 +393,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				CODE_SIGN_ENTITLEMENTS = Config/EAlbums.entitlements;
+				INFOPLIST_FILE = "Config/App-Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "$(EALBUMS_BUNDLE_ID_PREFIX).EAlbums";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -310,6 +420,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				CODE_SIGN_ENTITLEMENTS = Config/EAlbums.entitlements;
+				INFOPLIST_FILE = "Config/App-Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "$(EALBUMS_BUNDLE_ID_PREFIX).EAlbums";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -347,6 +459,50 @@
 			};
 			name = Release;
 		};
+		7B8F0000000000380000AAAA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Config/EAlbumsWidgets.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Config/Widgets-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = EAlbums;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(EALBUMS_BUNDLE_ID_PREFIX).EAlbums.Widgets";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Debug;
+		};
+		7B8F0000000000390000AAAA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Config/EAlbumsWidgets.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Config/Widgets-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = EAlbums;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(EALBUMS_BUNDLE_ID_PREFIX).EAlbums.Widgets";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -377,6 +533,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		7B8F0000000000370000AAAA /* Build configuration list for PBXNativeTarget "EAlbumsWidgets" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B8F0000000000380000AAAA /* Debug */,
+				7B8F0000000000390000AAAA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -397,6 +562,11 @@
 			productName = "plugin:SwiftLintBuildToolPlugin";
 		};
 		7B8F00000000001D0000AAAA /* SwiftLintBuildToolPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7B8F00000000001B0000AAAA /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */;
+			productName = "plugin:SwiftLintBuildToolPlugin";
+		};
+		7B8F0000000000410000AAAA /* SwiftLintBuildToolPlugin */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7B8F00000000001B0000AAAA /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */;
 			productName = "plugin:SwiftLintBuildToolPlugin";

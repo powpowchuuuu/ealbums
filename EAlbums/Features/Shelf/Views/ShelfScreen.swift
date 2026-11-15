@@ -30,6 +30,7 @@ struct ShelfScreen: View {
             .alert("Couldn't save your albums", isPresented: $shelf.saveFailed) {
                 Button("OK") {}
             }
+            .opensWidgetLinks()
         }
     }
 }
@@ -70,6 +71,8 @@ private struct ShelfList: View {
                     ReleaseTile(release: release)
                 }
                 .buttonStyle(.plain)
+                // The lifted card keeps the cover's square corners, not the system's rounded preview.
+                .contentShape(.contextMenuPreview, .rect(cornerRadius: 3))
                 .contextMenu { menu(for: release) }
             }
             .padding(.top, 10)
