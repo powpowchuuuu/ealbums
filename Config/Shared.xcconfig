@@ -1,0 +1,26 @@
+// Project-wide build settings. Edit here, not in the Xcode build settings UI.
+
+IPHONEOS_DEPLOYMENT_TARGET = 26.0
+SWIFT_VERSION = 6.0
+SWIFT_STRICT_CONCURRENCY = complete
+SWIFT_APPROACHABLE_CONCURRENCY = YES
+SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor
+SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES
+SWIFT_TREAT_WARNINGS_AS_ERRORS = YES
+OTHER_SWIFT_FLAGS = $(inherited) -Werror DeprecatedDeclaration
+ENABLE_USER_SCRIPT_SANDBOXING = YES
+DEAD_CODE_STRIPPING = YES
+
+// iPhone, portrait.
+TARGETED_DEVICE_FAMILY = 1
+INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait
+
+// MusicKit asks for Apple Music access with this sentence.
+INFOPLIST_KEY_NSAppleMusicUsageDescription = EAlbums searches Apple Music for the albums, EPs, singles and songs you keep.
+
+// Signing. Placeholders: the real values go in the gitignored Secrets.xcconfig (see Secrets.example.xcconfig),
+// included last so it overrides them.
+DEVELOPMENT_TEAM =
+EALBUMS_BUNDLE_ID_PREFIX = com.example
+
+#include? "Secrets.xcconfig"

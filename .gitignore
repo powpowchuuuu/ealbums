@@ -1,0 +1,14 @@
+# Xcode
+xcuserdata/
+DerivedData/
+build/
+
+# macOS
+.DS_Store
+
+# Signing (copy Config/Secrets.example.xcconfig → Config/Secrets.xcconfig)
+Config/Secrets.xcconfig
+
+# Local notes for the coding assistant
+CLAUDE.md
+.claude/

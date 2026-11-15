@@ -1,0 +1,407 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		7B8F0000000000010000AAAA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7B8F0000000000020000AAAA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7B8F0000000000030000AAAA;
+			remoteInfo = EAlbums;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7B8F0000000000040000AAAA /* EAlbums.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EAlbums.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B8F0000000000050000AAAA /* EAlbumsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EAlbumsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B8F0000000000060000AAAA /* Shared.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Shared.xcconfig; sourceTree = "<group>"; };
+		7B8F0000000000070000AAAA /* Secrets.example.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.example.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		7B8F0000000000090000AAAA /* EAlbums */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = EAlbums;
+			sourceTree = "<group>";
+		};
+		7B8F00000000000A0000AAAA /* EAlbumsTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = EAlbumsTests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7B8F00000000000B0000AAAA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B8F00000000000C0000AAAA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7B8F00000000000D0000AAAA = {
+			isa = PBXGroup;
+			children = (
+				7B8F00000000000E0000AAAA /* Config */,
+				7B8F0000000000090000AAAA /* EAlbums */,
+				7B8F00000000000A0000AAAA /* EAlbumsTests */,
+				7B8F00000000000F0000AAAA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7B8F00000000000E0000AAAA /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				7B8F0000000000060000AAAA /* Shared.xcconfig */,
+				7B8F0000000000070000AAAA /* Secrets.example.xcconfig */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		7B8F00000000000F0000AAAA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7B8F0000000000040000AAAA /* EAlbums.app */,
+				7B8F0000000000050000AAAA /* EAlbumsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7B8F0000000000030000AAAA /* EAlbums */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7B8F0000000000100000AAAA /* Build configuration list for PBXNativeTarget "EAlbums" */;
+			buildPhases = (
+				7B8F0000000000110000AAAA /* Sources */,
+				7B8F00000000000B0000AAAA /* Frameworks */,
+				7B8F0000000000120000AAAA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7B8F0000000000130000AAAA /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				7B8F0000000000090000AAAA /* EAlbums */,
+			);
+			name = EAlbums;
+			packageProductDependencies = (
+			);
+			productName = EAlbums;
+			productReference = 7B8F0000000000040000AAAA /* EAlbums.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7B8F0000000000140000AAAA /* EAlbumsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7B8F0000000000150000AAAA /* Build configuration list for PBXNativeTarget "EAlbumsTests" */;
+			buildPhases = (
+				7B8F0000000000160000AAAA /* Sources */,
+				7B8F00000000000C0000AAAA /* Frameworks */,
+				7B8F0000000000170000AAAA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7B8F0000000000180000AAAA /* PBXTargetDependency */,
+				7B8F0000000000190000AAAA /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				7B8F00000000000A0000AAAA /* EAlbumsTests */,
+			);
+			name = EAlbumsTests;
+			packageProductDependencies = (
+			);
+			productName = EAlbumsTests;
+			productReference = 7B8F0000000000050000AAAA /* EAlbumsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7B8F0000000000020000AAAA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2720;
+				LastUpgradeCheck = 2720;
+				TargetAttributes = {
+					7B8F0000000000030000AAAA = {
+						CreatedOnToolsVersion = 27.2;
+					};
+					7B8F0000000000140000AAAA = {
+						CreatedOnToolsVersion = 27.2;
+						TestTargetID = 7B8F0000000000030000AAAA;
+					};
+				};
+			};
+			buildConfigurationList = 7B8F00000000001A0000AAAA /* Build configuration list for PBXProject "EAlbums" */;
+			developmentRegion = fr;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				fr,
+				Base,
+			);
+			mainGroup = 7B8F00000000000D0000AAAA;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				7B8F00000000001B0000AAAA /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 7B8F00000000000F0000AAAA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7B8F0000000000030000AAAA /* EAlbums */,
+				7B8F0000000000140000AAAA /* EAlbumsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7B8F0000000000120000AAAA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B8F0000000000170000AAAA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7B8F0000000000110000AAAA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B8F0000000000160000AAAA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7B8F0000000000130000AAAA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 7B8F00000000001C0000AAAA /* SwiftLintBuildToolPlugin */;
+		};
+		7B8F0000000000180000AAAA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 7B8F00000000001D0000AAAA /* SwiftLintBuildToolPlugin */;
+		};
+		7B8F0000000000190000AAAA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7B8F0000000000030000AAAA /* EAlbums */;
+			targetProxy = 7B8F0000000000010000AAAA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		7B8F00000000001E0000AAAA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B8F0000000000060000AAAA /* Shared.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7B8F00000000001F0000AAAA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B8F0000000000060000AAAA /* Shared.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7B8F0000000000200000AAAA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = EAlbums;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(EALBUMS_BUNDLE_ID_PREFIX).EAlbums";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Debug;
+		};
+		7B8F0000000000210000AAAA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = EAlbums;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(EALBUMS_BUNDLE_ID_PREFIX).EAlbums";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Release;
+		};
+		7B8F0000000000220000AAAA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(EALBUMS_BUNDLE_ID_PREFIX).EAlbumsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EAlbums.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/EAlbums";
+			};
+			name = Debug;
+		};
+		7B8F0000000000230000AAAA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(EALBUMS_BUNDLE_ID_PREFIX).EAlbumsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EAlbums.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/EAlbums";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7B8F0000000000100000AAAA /* Build configuration list for PBXNativeTarget "EAlbums" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B8F0000000000200000AAAA /* Debug */,
+				7B8F0000000000210000AAAA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7B8F0000000000150000AAAA /* Build configuration list for PBXNativeTarget "EAlbumsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B8F0000000000220000AAAA /* Debug */,
+				7B8F0000000000230000AAAA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7B8F00000000001A0000AAAA /* Build configuration list for PBXProject "EAlbums" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B8F00000000001E0000AAAA /* Debug */,
+				7B8F00000000001F0000AAAA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7B8F00000000001B0000AAAA /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SimplyDanny/SwiftLintPlugins";
+			requirement = {
+				kind = exactVersion;
+				version = 0.65.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7B8F00000000001C0000AAAA /* SwiftLintBuildToolPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7B8F00000000001B0000AAAA /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */;
+			productName = "plugin:SwiftLintBuildToolPlugin";
+		};
+		7B8F00000000001D0000AAAA /* SwiftLintBuildToolPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7B8F00000000001B0000AAAA /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */;
+			productName = "plugin:SwiftLintBuildToolPlugin";
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 7B8F0000000000020000AAAA /* Project object */;
+}

@@ -1,0 +1,362 @@
+# SwiftLint configuration — Swift 6.2 / SwiftUI / MV architecture / test-first
+# Requires SwiftLint 0.65+.  Place at the project root.
+# Rule reference: https://realm.github.io/SwiftLint/rule-directory.html
+
+# No `included:` on purpose. Its entries are literal paths/globs resolved against
+# this file's directory, NOT regexes — so an `included` list written for one
+# layout silently lints zero files in another (the Xcode layout nests App/,
+# Features/, Core/ under MyApp/ and names the test targets MyAppTests/).
+# Linting everything below the config and subtracting `excluded` is the only
+# form that cannot fail open.
+
+excluded:
+  - .build
+  - .swiftpm
+  - DerivedData
+  - Pods
+  - Carthage
+  - "**/*.generated.swift"
+  - "**/Resources"
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Size budget — the anti-monolith rules.
+# ─────────────────────────────────────────────────────────────────────────────
+
+file_length:
+  warning: 250
+  error: 400
+  ignore_comment_only_lines: true
+
+type_body_length:
+  warning: 150
+  error: 250
+
+function_body_length:
+  warning: 40
+  error: 60
+
+# Caps SwiftUI view-builder closures: this is what stops a 300-line `body`.
+closure_body_length:
+  warning: 25
+  error: 40
+
+cyclomatic_complexity:
+  warning: 8
+  error: 12
+  ignores_case_statements: true
+
+function_parameter_count:
+  warning: 5
+  error: 6
+
+large_tuple:
+  warning: 2
+  error: 3
+
+nesting:
+  type_level:
+    warning: 2
+    error: 3
+  function_level:
+    warning: 3
+    error: 4
+
+line_length:
+  warning: 120
+  error: 160
+  ignores_urls: true
+  ignores_comments: true
+  ignores_interpolated_strings: true
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Naming
+# ─────────────────────────────────────────────────────────────────────────────
+
+identifier_name:
+  # Warning only: no name can be shorter than one character, so an `error` tier
+  # here would be dead config. A one-letter name is a nudge, not a build break.
+  min_length:
+    warning: 2
+  max_length:
+    warning: 45
+    error: 60
+  allowed_symbols: ["_"]
+  excluded: [id, x, y, z, ok, to, at, on, up, db, ui]
+
+type_name:
+  min_length: 3
+  max_length:
+    warning: 45
+    error: 60
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Disabled defaults
+# ─────────────────────────────────────────────────────────────────────────────
+
+disabled_rules:
+  - todo                      # tracked in the issue tracker, not by the linter
+  - trailing_comma            # multiline trailing commas are fine and diff better
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Opt-in rules
+# ─────────────────────────────────────────────────────────────────────────────
+
+opt_in_rules:
+  # size / structure
+  - closure_body_length
+  - file_name
+  - file_name_no_space
+  - vertical_whitespace_between_cases
+  - vertical_whitespace_closing_braces
+  - vertical_whitespace_opening_braces
+
+  # correctness & safety
+  - force_unwrapping
+  - implicitly_unwrapped_optional
+  - discouraged_optional_boolean
+  - discouraged_optional_collection
+  - discouraged_assert
+  - fatal_error_message
+  - unavailable_function
+  - unavailable_condition
+  - untyped_error_in_catch
+  - identical_operands
+  - yoda_condition
+  - variable_shadowing
+  - self_binding
+  - shorthand_optional_binding
+  - private_swiftui_state
+  - self_in_property_initialization
+  - return_value_from_void_function
+  - overridden_super_call
+  - prohibited_super_call
+
+  # concurrency (Swift 6)
+  - unhandled_throwing_task
+  - async_without_await
+  - incompatible_concurrency_annotation
+
+  # deprecation / platform hygiene
+  - deployment_target
+  - legacy_objc_type
+  - legacy_multiple
+  - legacy_uigraphics_function
+  - prefer_asset_symbols
+  - inclusive_language
+  - invisible_character
+
+  # idiomatic Swift
+  - array_init
+  - collection_alignment
+  - comma_inheritance
+  - contains_over_filter_count
+  - contains_over_filter_is_empty
+  - contains_over_first_not_nil
+  - contains_over_range_nil_comparison
+  - convenience_type
+  - direct_return
+  - empty_collection_literal
+  - empty_count
+  - empty_string
+  - enum_case_associated_values_count
+  - explicit_init
+  - extension_access_modifier
+  - fallthrough
+  - first_where
+  - flatmap_over_map_reduce
+  - joined_default_parameter
+  - last_where
+  - literal_expression_end_indentation
+  - modifier_order
+  - multiline_parameters
+  - number_separator
+  - optional_enum_case_matching
+  - pattern_matching_keywords
+  - prefer_key_path
+  - prefer_self_in_static_references
+  - prefer_self_type_over_type_of_self
+  - prefer_zero_over_explicit_init
+  - private_action
+  - private_outlet
+  - private_subject
+  - reduce_into
+  - redundant_nil_coalescing
+  - redundant_type_annotation
+  - sorted_first_last
+  - sorted_imports
+  - static_operator
+  - strict_fileprivate
+  - superfluous_else
+  - toggle_bool
+  - unneeded_parentheses_in_closure_argument
+  - unowned_variable_capture
+  - unused_parameter
+
+  # accessibility — cheap to satisfy, expensive to retrofit
+  - accessibility_label_for_image
+  - accessibility_trait_for_button
+
+  # tests
+  - test_case_accessibility
+  - final_test_case
+  - single_test_class
+  - balanced_xctest_lifecycle
+  - empty_xctest_method
+  - xct_specific_matcher
+  - xctfail_message
+
+  - custom_rules
+
+# Analyzer rules are a separate list. Listed under `opt_in_rules` they are
+# ignored — they only run via `swiftlint analyze --compiler-log-path …`.
+analyzer_rules:
+  - unused_import
+  - unused_declaration
+  - capture_variable
+  - typesafe_array_init
+
+# Rules considered and deliberately left off:
+#   no_magic_numbers        — SwiftUI layout is full of literals; too noisy
+#   explicit_type_interface — Swift's inference is the point
+#   missing_docs            — doc every public API in a library, not in an app
+#   one_declaration_per_file— blocks the private-subview-in-same-file pattern
+#   type_contents_order     — high churn, low value
+
+enum_case_associated_values_count:
+  warning: 4
+  error: 6
+
+number_separator:
+  minimum_length: 5
+
+file_name:
+  excluded: ["main.swift", "LinuxMain.swift"]
+  nested_type_separator: "+"
+
+deployment_target:
+  iOS_deployment_target: "26.0"
+  macOS_deployment_target: "26.0"
+
+force_unwrapping:
+  severity: error
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Default rules escalated to error
+# ─────────────────────────────────────────────────────────────────────────────
+
+force_cast: error
+force_try: error
+implicitly_unwrapped_optional:
+  severity: error
+private_over_fileprivate:
+  validate_extensions: true
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Custom rules: architecture and deprecation enforcement
+# ─────────────────────────────────────────────────────────────────────────────
+
+custom_rules:
+
+  # ---- MV architecture ----
+
+  no_view_model_type:
+    name: "No ViewModel (MV architecture)"
+    regex: '\b(class|struct|protocol|enum|actor)\s+\w*(ViewModel|VM)\b'
+    message: "MV architecture: no ViewModel layer. Use an @Observable Store for the bounded context, or a pure function."
+    severity: error
+
+  no_observable_object:
+    name: "Legacy ObservableObject"
+    regex: '(:\s*ObservableObject\b|\bObservableObject\s*\{|@Published\b|@StateObject\b|@ObservedObject\b|@EnvironmentObject\b)'
+    message: "Use @Observable + @State/@Environment. ObservableObject, @Published and the ObservedObject family are the pre-Observation API."
+    severity: error
+
+  no_singleton_shared:
+    name: "Singleton access"
+    regex: '\b(?!URLSession|FileManager|NotificationCenter|UserDefaults|Bundle|UIApplication|NSUbiquitousKeyValueStore)\w+\.(shared|default)\s*\.'
+    message: "Inject the dependency at the composition root instead of reaching for a singleton."
+    severity: warning
+    match_kinds: [identifier, typeidentifier]
+
+  no_business_logic_in_view:
+    name: "Networking inside a View"
+    regex: '\b(URLSession|URLRequest|JSONDecoder|JSONEncoder|NSPersistentContainer)\b'
+    message: "Views must not touch the network or persistence layer. Move this into a Service and call it from the Store."
+    included: ".*(View|Screen)\\.swift"
+    severity: error
+
+  # ---- deprecated SwiftUI ----
+
+  deprecated_navigation_view:
+    name: "Deprecated NavigationView"
+    regex: '\bNavigationView\s*[({]'
+    message: "NavigationView is deprecated. Use NavigationStack or NavigationSplitView."
+    severity: error
+
+  deprecated_navigation_link_is_active:
+    name: "Deprecated NavigationLink(isActive:)"
+    regex: '\bNavigationLink\s*\([^)]*\bisActive:'
+    message: "NavigationLink(destination:isActive:) is deprecated. Drive navigation with NavigationStack(path:) and navigationDestination."
+    severity: error
+
+  deprecated_on_change:
+    name: "Deprecated onChange(of:perform:)"
+    regex: '\.onChange\(\s*of:[^)]*,\s*perform:'
+    message: "onChange(of:perform:) is deprecated. Use onChange(of:) { oldValue, newValue in } or the zero-parameter form."
+    severity: error
+
+  deprecated_swiftui_modifier:
+    name: "Deprecated SwiftUI modifier"
+    regex: '\.(foregroundColor|accentColor|navigationBarTitle|navigationBarItems|navigationBarHidden|edgesIgnoringSafeArea|autocapitalization|disableAutocorrection|cornerRadius)\s*\('
+    message: "Deprecated modifier. Use foregroundStyle, tint, navigationTitle, toolbar, toolbarVisibility, ignoresSafeArea, textInputAutocapitalization, autocorrectionDisabled, or clipShape(.rect(cornerRadius:))."
+    severity: error
+
+  deprecated_implicit_animation:
+    name: "Deprecated animation(_:)"
+    regex: '\.animation\(\s*[^,()]*(\([^()]*\))?[^,()]*\)'
+    message: "animation(_:) without a value is deprecated. Use animation(_:value:) or withAnimation."
+    severity: error
+
+  deprecated_uikit_bridge:
+    name: "Deprecated UIKit bridging"
+    regex: '\b(UIScreen\.main|UIApplication\.shared\.windows|UIApplication\.shared\.keyWindow|UIApplication\.shared\.statusBarOrientation|UIGraphicsBeginImageContext)\b'
+    message: "Deprecated UIKit API. Use GeometryReader/@Environment for metrics, UIWindowScene.windows for the window, and UIGraphicsImageRenderer for drawing."
+    severity: error
+
+  deprecated_dispatch_in_swiftui:
+    name: "DispatchQueue in SwiftUI code"
+    regex: '\bDispatchQueue\.(main|global)\b'
+    message: "Use structured concurrency: Task, @MainActor, or Task.sleep. DispatchQueue defeats Swift 6 isolation checking."
+    severity: error
+
+  # ---- testing ----
+
+  no_xctest_in_unit_tests:
+    name: "XCTest in a unit-test target"
+    regex: '^import XCTest'
+    message: "Unit tests use Swift Testing (@Test / #expect). XCTest is only for XCUITest targets."
+    included: ".*Tests/.*\\.swift"
+    excluded: ".*UITests/.*"
+    severity: error
+
+  # Catches Thread.sleep, Task.sleep, usleep and the C sleep(). The lookbehind on
+  # the bare form is what lets an injected clock through: `clock.sleep(for:)` on
+  # a test clock returns instantly and is the sanctioned alternative.
+  no_sleep_in_tests:
+    name: "Real sleep in a test"
+    regex: '(\bThread\.sleep|\bTask\.sleep|\busleep\(|(?<![.\w])sleep\()'
+    message: "Do not sleep in tests. Use await, confirmation, or a controllable clock."
+    included: ".*Tests?/.*\\.swift"
+    severity: error
+
+  # ---- diagnostics ----
+
+  no_print:
+    name: "print instead of Logger"
+    regex: '\b(print|debugPrint|dump)\s*\('
+    message: "Use os.Logger so the output is structured, filterable and stripped from release builds."
+    excluded: ".*Tests?/.*"
+    match_kinds: [identifier]
+    severity: warning
+
+reporter: "xcode"
