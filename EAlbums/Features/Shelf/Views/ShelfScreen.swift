@@ -31,6 +31,7 @@ struct ShelfScreen: View {
                 Button("OK") {}
             }
             .opensWidgetLinks()
+            .screenshotSearch(adding: $adding)
         }
     }
 }
