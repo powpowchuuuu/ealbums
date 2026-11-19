@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// Passes the album of a tapped widget cover on to Apple Music. Widgets can only open their own app, so the Music link
+/// Passes the album of a tapped widget cover on to the music app. Widgets can only open their own app, so the music link
 /// arrives inside an `ealbums://` link; it is opened once the app is active, or iOS may ignore the hand-off.
 struct WidgetLinkHandler: ViewModifier {
     @Environment(\.openURL) private var openURL
@@ -24,7 +24,7 @@ struct WidgetLinkHandler: ViewModifier {
 }
 
 extension View {
-    /// Opens in Apple Music the album a tapped widget asks for.
+    /// Opens in the music app the album a tapped widget asks for.
     func opensWidgetLinks() -> some View {
         modifier(WidgetLinkHandler())
     }

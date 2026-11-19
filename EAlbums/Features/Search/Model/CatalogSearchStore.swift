@@ -1,7 +1,7 @@
 import Foundation
 import Observation
 
-/// The search in the add sheet: the words typed and what Apple Music answered.
+/// The search in the add sheet: the words typed and what the catalog answered.
 @Observable
 final class CatalogSearchStore {
     enum Phase: Equatable {

@@ -14,7 +14,7 @@ nonisolated enum CatalogError: Error, Equatable, LocalizedError {
     }
 }
 
-/// The Apple Music catalog, searched by words.
+/// A music catalog, searched by words.
 nonisolated protocol MusicCatalog: Sendable {
     /// Albums, EPs and singles first, then songs.
     func search(_ term: String) async throws -> [Release]

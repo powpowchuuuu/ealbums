@@ -8,7 +8,15 @@ enum AppConfiguration {
         // `-preview-catalog` on launch: made-up results instead of Apple Music, for screenshots.
         if ProcessInfo.processInfo.arguments.contains("-preview-catalog") { return PreviewMusicCatalog() }
         #endif
-        return AppleMusicCatalog()
+        // The service is read at each search, so a new choice in the options applies to the next one.
+        return ServiceCatalog(appleMusic: AppleMusicCatalog(), youtubeMusic: YouTubeMusicCatalog()) {
+            MusicService.saved(in: .standard)
+        }
+    }
+
+    /// The service the add sheet searches, Apple Music unless the user picked YouTube Music.
+    static func services() -> ServiceStore {
+        ServiceStore(defaults: .standard)
     }
 
     /// The shelf in the App Group the widgets read, which reload after every change.

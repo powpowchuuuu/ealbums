@@ -12,3 +12,11 @@ Config/Secrets.xcconfig
 # Local notes for the coding assistant
 CLAUDE.md
 .claude/
+*.jsonl
+
+# Keys and other secrets
+.env
+.env.*
+*.p8
+*.p12
+*.mobileprovision

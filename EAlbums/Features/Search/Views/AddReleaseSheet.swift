@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// Searching Apple Music: a glass search bar and a close button on one line, then the results.
+/// Searching Apple Music or YouTube Music, as picked in the options: a glass search bar and a close button on one line, then the results.
 /// Tap a release to keep it (dimmed once kept), tap again to take it off.
 struct AddReleaseSheet: View {
     @Environment(ShelfStore.self) private var shelf
@@ -77,7 +77,9 @@ struct AddReleaseSheet: View {
             ContentUnavailableView(
                 "Apple Music Access Needed",
                 systemImage: "music.note",
-                description: Text("Allow EAlbums to use Apple Music in Settings to search the catalog.")
+                description: Text(
+                    "Allow EAlbums to use Apple Music in Settings, or pick YouTube Music in the Albums options."
+                )
             )
 
         case .failed(let reason):

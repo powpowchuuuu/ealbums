@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// "Albums": what the user keeps, in two columns, with "+" to add from Apple Music and the sort and filter menu.
+/// "Albums": what the user keeps, in two columns, with "+" to add from Apple Music or YouTube Music and the options.
 struct ShelfScreen: View {
     @Environment(ShelfStore.self) private var shelf
     @State private var adding = false
@@ -51,7 +51,7 @@ private struct ShelfToolbar: ToolbarContent {
     }
 }
 
-/// The search bar, then the kept releases; each opens in Apple Music.
+/// The search bar, then the kept releases; each opens in the service it was found in.
 private struct ShelfList: View {
     @Environment(ShelfStore.self) private var shelf
     @Environment(\.openURL) private var openURL
@@ -82,7 +82,7 @@ private struct ShelfList: View {
 
     @ViewBuilder private func menu(for release: Release) -> some View {
         if let url = release.url {
-            Button("Open in Apple Music", systemImage: "music.note") { openURL(url) }
+            Button("Open in \(release.service.name)", systemImage: "music.note") { openURL(url) }
         }
         Button("Remove", systemImage: "trash", role: .destructive) {
             withAnimation { shelf.remove(release.id) }
@@ -112,5 +112,6 @@ private struct EmptyShelfView: View {
     ShelfScreen()
         .environment(ShelfStore(storage: FileShelfStorage(fileURL: URL.temporaryDirectory.appending(path: "p.json"))))
         .environment(CatalogSearchStore(catalog: PreviewMusicCatalog()))
+        .environment(ServiceStore(defaults: .standard))
 }
 #endif
